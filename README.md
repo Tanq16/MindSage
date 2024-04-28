@@ -6,9 +6,9 @@
   <br>MindSage<br>
 </h1>
 
-<p align="center">MindSage is a simplistic and limited clone of [Fabric](https://github.com/danielmiessler/fabric/tree/main) by Daniel Miessler.</p>
+MindSage is a simplistic and limited clone of [Fabric](https://github.com/danielmiessler/fabric/tree/main) by Daniel Miessler.
 
-This project is meant to provide a usable Docker image that sets up a limited-version of Fabric's API server on a home network. The provided `client.py` can be used to connect to the server from various machines in the same network. Additionally, the excepted arguments have been modified to be simplistic so the API can be called from Siri shortcuts as well.
+This project is meant to provide a Docker image that sets up a limited-version of Fabric's API server on a home network. The provided `client.py` can be used to connect to the server from various machines in the same network. Additionally, the excepted arguments have been modified to be simplistic so the API can be called from Siri shortcuts as well.
 
 ## Usage
 
@@ -21,6 +21,18 @@ docker run -p 5000:5000 -e "OPENAI_API_KEY=sk-proj-XXXX" --rm -it tanq16/mindsag
 > Keep in mind the above image is for x86-64 only. You need to build one for ARM64.
 
 A better method is to deploy using Docker compose or a deployment manager like [Dockge](https://github.com/louislam/dockge), where the environment variables can be specified separately to not expose the key within shell history.
+
+The accepted JSON data for interacting with a `curl` request is as follows &rarr;
+
+```json
+{
+  "model":"gpt3.5",
+  "link":1,
+  "input":"https://youtube.com/watch?v=abcdefghijk"
+}
+```
+
+Only 2 models (gpt3.5 and gpt4) are supported. The `link` variable tells it whether to accept a link or text, and the `input` variable is either the link or the text. The `client` checks for the presence of `youtu` in the link and automatically pulls the transcript if it does, i.e., only `youtube.*` and `youtu.be*` links will work (copy pasting the URL from a browser will alwaya work).
 
 ## Local Usage
 
