@@ -84,7 +84,7 @@ def milling(pattern):
 
 def main():
     """Runs the main fabric API backend server"""
-    app.run(host="0.0.0.0", port=6000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 if __name__ == "__main__":
     main()
