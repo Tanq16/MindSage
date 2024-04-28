@@ -8,7 +8,7 @@
 
 MindSage is a simplistic and limited clone of [Fabric](https://github.com/danielmiessler/fabric/tree/main) by Daniel Miessler.
 
-This project is meant to provide a Docker image that sets up a limited-version of Fabric's API server on a home network. The provided `client.py` can be used to connect to the server from various machines in the same network. Additionally, the excepted arguments have been modified to be simplistic so the API can be called from Siri shortcuts as well.
+This project is meant to provide a Docker image that sets up a limited-version of Fabric's API server on a home network. The provided `client.py` can be used to connect to the server from various machines in the same network. Additionally, the accepted arguments have been modified to be simplistic so the API can be called from Siri shortcuts as well.
 
 ## Usage
 
